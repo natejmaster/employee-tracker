@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const connection = require('../dbConnection');
-const { table } = require('table'); // You can use a table formatting library if desired
+const { table } = require('table');
 
 //Function to view all departments
 function viewDepartments() {
@@ -58,7 +58,7 @@ function addDepartment() {
                     return;
                 }
             console.log(`\n${answers.department_name} department has been added successfully.`);
-            viewDepartments(); // Optionally, view all departments after adding
+            viewDepartments();
             });
         });
     });
