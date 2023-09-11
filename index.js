@@ -51,16 +51,24 @@ function mainMenu() {
                         });
                         break;
                     case 'Add a department':
-                        addDepartment();
+                        addDepartment().then(() => {
+                            displayMenu();
+                        });
                         break;
                     case 'Add a role':
-                        addRole();
+                        addRole().then(() => {
+                            displayMenu();
+                        });
                         break;
                     case 'Add an employee':
-                        addEmployee();
+                        addEmployee().then(() => {
+                            displayMenu();
+                        });
                         break;
                     case 'Update an employee role':
-                        updateEmployeeRole();
+                        updateEmployeeRole().then(() => {
+                            displayMenu();
+                        });
                         break;
                     case 'Exit':
                         console.log('Goodbye and thanks for using Employee Tracker! Have a nice day!');
