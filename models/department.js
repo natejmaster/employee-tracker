@@ -4,6 +4,7 @@ const { table } = require('table');
 
 //Function to view all departments
 function viewDepartments() {
+    return new Promise((resolve, reject) => {
     const query = 'SELECT * FROM departments';
 
     connection.query(query, (err, results) => {
@@ -19,7 +20,9 @@ function viewDepartments() {
     const output = table(data);
     console.log('\nAll Departments:');
     console.log(output);
+    resolve();
     });
+});
 }
 
 function addDepartment() {

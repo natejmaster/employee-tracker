@@ -4,6 +4,7 @@ const { table } = require('table');
 
 //Function to view all departments
 function viewEmployees() {
+    return new Promise((resolve, reject) => {
     const query = `SELECT
     e.id AS 'Employee ID',
     e.first_name AS 'First Name',
@@ -33,7 +34,9 @@ function viewEmployees() {
     const output = table(data);
     console.log('\nAll Employees:');
     console.log(output);
+    resolve();
     });
+});
 }
 
 function addEmployee() {
@@ -61,9 +64,6 @@ function addEmployee() {
             },
         ])
         .then((answers) => {
-
-        })
-        .then((answers) => {
             const query = 'INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)';
             const values = [answers.first_name, answers.last_name, answers.role_id, answers.manager_id || null];
 
@@ -74,8 +74,7 @@ function addEmployee() {
                 }
 
                 console.log(`Added employee: ${answers.first_name} ${answers.last_name}`);
-                // Optionally, you can call a function to view all employees here.
-                // viewEmployees();
+                viewEmployees();
             });
         });
 }
@@ -109,6 +108,7 @@ function updateEmployeeRole() {
                     console.log('No employee found with the provided ID.');
                 } else {
                     console.log(`Updated employee's role (Employee ID: ${answers.employee_id}).`);
+                    viewEmployees();
                 }
             });
         });
