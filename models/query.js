@@ -1,5 +1,5 @@
+//dbConnection import
 const connection = require('../dbConnection');
-const { table } = require('table'); // You can use a table formatting library if desired
 // Function to execute a SQL query
 function executeQuery(query, params = []) {
   return new Promise((resolve, reject) => {

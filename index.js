@@ -1,4 +1,6 @@
+//Require inquirer
 const inquirer = require('inquirer');
+//Import functions for department, role, and employee handling
 const {
     viewDepartments,
     addDepartment,
@@ -12,7 +14,7 @@ const {
     addEmployee,
     updateEmployeeRole,
 } = require('./models/employee');
-
+//Main menu function with displayMenu inquirer function to present main menu
 function mainMenu() {
     function displayMenu() {
         inquirer
@@ -33,6 +35,7 @@ function mainMenu() {
                     ],
                 },
             ])
+            //Switch calls imported function depending on main menu selection. After each function is called to completion, menu is displayed again
             .then((answers) => {
                 switch (answers.action) {
                     case 'View all departments':
@@ -76,7 +79,7 @@ function mainMenu() {
                 }
             });
     }
-
+    //Calls displayMenu function to initialize main menu
     displayMenu();
 }
 

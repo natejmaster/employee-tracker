@@ -1,5 +1,5 @@
+//Mysql requirement
 const mysql = require('mysql');
-
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -7,7 +7,6 @@ const connection = mysql.createConnection({
   password: 'Password1',
   database: 'employees_db',
 });
-
 // Connect to the database
 connection.connect((err) => {
   if (err) {
@@ -16,5 +15,5 @@ connection.connect((err) => {
   }
   console.log('Connected to MySQL database');
 });
-
+//Export database connection
 module.exports = connection;
