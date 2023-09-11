@@ -12,6 +12,7 @@ This project encourages the use of digital data tracking in the workplace to mak
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Links](#links)
 
 ## Installation
 Before the project is initialized the first time, enter 'npm i' into the command line. This will install all required middleware and allow the project to run as needed.
@@ -31,3 +32,6 @@ There is no testing required for this project
     
 ## Questions
 Do you still have questions or further inquiries? Reach out to me on GitHub at http://github.com/natejmaster or e-mail me at natejmaster@gmail.com
+
+## Links
+Link to Demo of Employee Tracker in action: https://drive.google.com/file/d/1XG31d-nLnP4k9WDagLIQ059pt7nCBhmM/view?usp=sharing
